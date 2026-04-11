@@ -1,0 +1,1 @@
+{"name": "wqedw","version": "1.0.0","description": "ID Card Data Extraction and Postal Code Lookup Service","type": "module","scripts": {"dev": "convex dev","build": "convex build","deploy": "convex deploy"},"dependencies": {"convex": "^1.14.0","openai": "^4.52.0"},"devDependencies": {"@types/node": "^20.0.0","typescript": "^5.0.0"}}
