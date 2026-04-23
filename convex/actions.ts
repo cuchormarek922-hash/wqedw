@@ -1,6 +1,7 @@
 import { v } from "convex/values";
 import OpenAI from "openai";
 import { action } from "./_generated/server";
+import { getSupabaseClient } from "./supabase";
 
 // Action: Extract ID Card Data
 export const extractIdCardData = action({
@@ -59,7 +60,7 @@ Only return the JSON, no other text.`,
     });
 
     const content = response.choices[0]?.message?.content ?? "{}";
-    return JSON.parse(content) as {
+    const extracted = JSON.parse(content) as {
       academicDegree: string | null;
       firstName: string | null;
       lastName: string | null;
@@ -71,6 +72,14 @@ Only return the JSON, no other text.`,
       idExpiryDate: string | null;
       gender: string | null;
     };
+
+    const supabase = getSupabaseClient();
+    await supabase.from("id_card_extractions").insert({
+      storage_id: storageId,
+      ...extracted,
+    });
+
+    return extracted;
   },
 });
 
