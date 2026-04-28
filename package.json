@@ -1,1 +1,28 @@
-{"name": "wqedw","version": "1.0.0","description": "ID Card Data Extraction and Postal Code Lookup Service","type": "module","scripts": {"dev": "convex dev","build": "convex build","deploy": "convex deploy"},"dependencies": {"@supabase/supabase-js": "^2.45.0","convex": "^1.14.0","openai": "^4.52.0"},"devDependencies": {"@types/node": "^20.0.0","typescript": "^5.0.0"}}
+{
+  "name": "wqedw",
+  "version": "1.0.0",
+  "description": "Multi-AI Brainstorm Roundtable",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "convex:dev": "convex dev",
+    "convex:deploy": "convex deploy"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "convex": "^1.14.0",
+    "openai": "^4.52.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.0.0",
+    "vite": "^5.4.0"
+  }
+}
